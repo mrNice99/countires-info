@@ -1,5 +1,6 @@
-// components
+// components-pages
 import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
 //style
 import "./styles/index.scss";
 // other
@@ -13,6 +14,7 @@ function App() {
     <main className="app-container">
       <QueryClientProvider client={queryClient}>
         <Router>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>

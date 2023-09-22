@@ -1,0 +1,71 @@
+@import "./index.scss";
+
+.dropbtn {
+  width: 170px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $White;
+  color: $DarkBlue;
+  font-weight: 600;
+  padding: 20px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(128, 128, 128, 0.2) 0px 3px 5px -1px;
+  transition: background-color 0.25s ease;
+
+  img {
+    width: 10%;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $VeryLightGray;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  width: 170px;
+  text-align: left;
+  background-color: $White;
+  position: absolute;
+  border-radius: 5px;
+  z-index: 1;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 6px 16px;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+
+  button {
+    all: unset;
+    margin: 2px 0;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    font-weight: 800;
+    color: $DarkBlue;
+    font-size: 13px;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+      background-color: #ddd;
+      cursor: pointer;
+    }
+  }
+}
+
+.visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}

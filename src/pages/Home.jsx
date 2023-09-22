@@ -1,6 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../helpers/fetchData";
 
+import SearchFilter from "../components/SearchFilter";
+import SelectFilter from "../components/SelectFilter";
+import CountryCard from "../components/CountryCard";
+import Loader from "../components/Loader";
+
 import "../styles/home.scss";
 import { useState } from "react";
 

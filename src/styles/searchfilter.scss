@@ -8,7 +8,32 @@
   width: 35%;
   box-shadow: rgba(128, 128, 128, 0.2) 0px 3px 5px -1px;
 
-  input {
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $VeryLightGray;
+    }
+  }
+
+  .input {
     width: 100%;
     background-color: $White;
     margin: 0;
@@ -18,6 +43,14 @@
     font-weight: 600;
     border: 1px solid transparent;
     border-radius: inherit;
+
+    &.light {
+      background-color: $VeryLightGray;
+    }
+    &.dark {
+      background-color: $DarkBlue;
+      color: $White;
+    }
 
     &::placeholder {
       font-size: 0.8rem;

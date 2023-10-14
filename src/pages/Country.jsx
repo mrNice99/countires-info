@@ -1,7 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "../App";
-
+import { useContext } from "react";
+import { ThemeContext } from "../context/AppContext";
 import { fetchData } from "../helpers/fetchData";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
@@ -16,6 +17,7 @@ const Country = () => {
   const [language, setLanguage] = useState("");
   const [allCountries, setAllCountries] = useState(null);
   const [borderCountries, setBorderCountries] = useState(null);
+  const { theme } = useContext(ThemeContext);
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["country"],
@@ -82,10 +84,10 @@ const Country = () => {
   }, [data, allCountries]);
 
   return (
-    <div className="country-page">
+    <div className={"country-page " + theme}>
       {isLoading && <Loader />}
-      <div className="country-wrapper">
-        <button onClick={() => navigate(-1)}>
+      <div className={"country-wrapper " + theme}>
+        <button className={"back-btn " + theme} onClick={() => navigate(-1)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -142,7 +144,7 @@ const Country = () => {
                   </p>
                   <div className="border-container">
                     <p>Border Countries:</p>
-                    <div className="border-countries">
+                    <div className={"border-countries " + theme}>
                       {borderCountries || "N/A"}
                     </div>
                   </div>

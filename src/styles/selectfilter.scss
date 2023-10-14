@@ -16,19 +16,47 @@
   box-shadow: rgba(128, 128, 128, 0.2) 0px 3px 5px -1px;
   transition: background-color 0.25s ease;
 
-  img {
-    width: 10%;
+  &.light {
+    background-color: $VeryLightGray;
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    color: $White;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $VeryLightGray;
+  img {
+    width: 10%;
   }
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $VeryLightGray;
+    }
+  }
 }
 
 .dropdown-content {
@@ -45,6 +73,34 @@
   padding: 6px 16px;
   transform: translateY(-10px);
   transition: all 0.25s ease;
+
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $VeryLightGray;
+    }
+    button {
+      color: $White;
+    }
+  }
 
   button {
     all: unset;

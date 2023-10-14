@@ -1,6 +1,7 @@
 import "../styles/selectfilter.scss";
 
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../context/AppContext";
 
 const SelectFilter = ({ setSelectRegion }) => {
   const regions = [
@@ -13,6 +14,7 @@ const SelectFilter = ({ setSelectRegion }) => {
   ];
 
   const [showMenu, setShowMenu] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   const handleClick = (region) => {
     setSelectRegion(region);
@@ -20,15 +22,22 @@ const SelectFilter = ({ setSelectRegion }) => {
   };
 
   return (
-    <div className="dropdown">
-      <button className="dropbtn" onClick={() => setShowMenu(!showMenu)}>
-        Filter by Region
+    <div className={"dropdown " + theme}>
+      <button
+        className={"dropbtn " + theme}
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        Filtriraj po Regionu
         <img
           src="https://www.iconbolt.com/iconsets/basicons/chevron-down-arrow.svg"
-          alt="down arrow"
+          alt="strelica nadole"
         />
       </button>
-      <div className={"dropdown-content " + (showMenu ? "visible" : "")}>
+      <div
+        className={
+          "dropdown-content " + (showMenu ? "visible" : "") + " " + theme
+        }
+      >
         {regions.map((region, index) => (
           <button key={index} onClick={() => handleClick(region)}>
             {region}

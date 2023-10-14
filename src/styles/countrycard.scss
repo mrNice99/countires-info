@@ -12,6 +12,31 @@
   font-size: $HomepageItemsFontSize;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $White;
+    }
+  }
+
   .flag-container {
     border-radius: 7px 7px 0 0;
     width: 100%;
@@ -28,6 +53,15 @@
   .info-container {
     padding: 1.5rem;
     color: $VeryDarkBlue;
+
+    &.light {
+      background-color: $VeryLightGray;
+    }
+    &.dark {
+      span {
+        color: $VeryLightGray;
+      }
+    }
 
     .country-name {
       font-size: 1.1rem;

@@ -1,12 +1,46 @@
 @import "./index.scss";
 
 .country-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  margin-top: 70px;
-  padding-top: 3rem;
+  height: 100vh;
+  padding: 6rem 3rem;
 
-  button {
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $VeryDarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $VeryLightGray;
+    }
+    h1 {
+      color: $White;
+    }
+    a {
+      background-color: $DarkBlue;
+      color: $White;
+
+      &:hover {
+        background-color: $VeryDarkBlue;
+      }
+    }
+  }
+
+  .back-btn {
     all: unset;
     padding: 0.5rem 1.35rem;
     border-radius: 5px;
@@ -22,6 +56,18 @@
     background-color: $White;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
 
+    &.light {
+      background-color: $VeryLightGray;
+    }
+    &.dark {
+      background-color: $DarkBlue;
+      color: $White;
+
+      &:hover {
+        background-color: $VeryDarkBlue;
+      }
+    }
+
     svg {
       width: 25px;
     }
@@ -33,6 +79,7 @@
 }
 
 .country-info-wrapper {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,6 +137,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  &.light {
+    background-color: $VeryLightGray;
+  }
+  &.dark {
+    color: $White;
+  }
 
   a {
     font-size: 0.75rem;

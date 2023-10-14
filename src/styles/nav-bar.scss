@@ -4,9 +4,38 @@
   z-index: 10;
   position: fixed;
   width: 100%;
+  height: 10%;
   top: 0;
   background-color: $White;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px -1px;
+
+  &.light {
+    background-color: $White;
+    .info-container {
+      color: $VeryDarkBlue;
+    }
+    p {
+      color: $VeryDarkBlue;
+    }
+    span {
+      color: $VeryDarkBlueText;
+    }
+  }
+  &.dark {
+    background-color: $DarkBlue;
+    .info-container {
+      color: $White;
+    }
+    p {
+      color: $White;
+    }
+    span {
+      color: $VeryLightGray;
+    }
+    a {
+      color: $White;
+    }
+  }
 
   ul {
     max-width: 1400px;
@@ -25,13 +54,32 @@
     color: $VeryDarkBlueText;
   }
 
-  button {
+  .mode-btn {
     all: unset;
     display: flex;
     align-items: center;
     gap: 7px;
     font-weight: 800;
     color: $DarkBlue;
+
+    &.light {
+      p {
+        color: $VeryDarkBlue;
+      }
+    }
+    &.dark {
+      p {
+        color: $White;
+      }
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
 
     img {
       height: 20px;

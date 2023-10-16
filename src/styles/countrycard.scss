@@ -86,3 +86,14 @@
     transform: scale(1.025);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .card-container {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .info-container {
+    text-align: center;
+  }
+}

@@ -78,7 +78,25 @@
 }
 
 @media screen and (max-width: 480px) {
+  .home-container {
+    margin-top: 0;
+    padding-bottom: 1rem;
+  }
+
   .country-container {
-    justify-content: center;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .load-more-button {
+    margin: 2.5rem auto 2rem auto;
+  }
+
+  .filter-container {
+    margin-top: 4.5rem;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-items: center;
   }
 }

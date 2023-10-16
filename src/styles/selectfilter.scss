@@ -125,3 +125,20 @@
   opacity: 1;
   visibility: visible;
 }
+
+@media screen and (max-width: 480px) {
+  .dropbtn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    transform: translateY(0);
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}

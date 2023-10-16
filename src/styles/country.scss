@@ -178,11 +178,15 @@
 
   .text-container {
     width: 100%;
+
+    h1 {
+      text-align: center;
+    }
   }
 
   .small-text-container {
     flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
     margin-bottom: 2rem;
   }
 
@@ -192,6 +196,6 @@
 
   .border-countries {
     margin: 1rem 0;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }

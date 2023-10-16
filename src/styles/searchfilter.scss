@@ -84,19 +84,19 @@
 
 @media screen and (max-width: 480px) {
   .search-filter {
-    padding: 10px; /* Povećaj padding za bolje tapanje na mobilnim uređajima */
+    padding: 10px;
   }
 
   .input {
-    width: 70%; /* Smanjenje širine input polja za više prostora za dugme */
+    width: 70%;
   }
 
   button {
-    width: 30%; /* Smanjenje širine dugmeta */
+    width: 30%;
   }
 
   .input::placeholder {
-    font-size: 12px; /* Prilagodite veličinu fonta placeholder teksta */
-    color: $DarkGray; /* Promenite boju teksta placeholder-a */
+    font-size: 12px;
+    color: $DarkGray;
   }
 }

@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/country/*"
+  to = "/index.html"
+  status = 200

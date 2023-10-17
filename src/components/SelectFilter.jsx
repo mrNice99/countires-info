@@ -27,7 +27,7 @@ const SelectFilter = ({ setSelectRegion }) => {
         className={"dropbtn " + theme}
         onClick={() => setShowMenu(!showMenu)}
       >
-        Filtriraj po Regionu
+        Filter by Region
         <img
           src="https://www.iconbolt.com/iconsets/basicons/chevron-down-arrow.svg"
           alt="strelica nadole"

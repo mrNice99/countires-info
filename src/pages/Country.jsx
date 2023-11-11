@@ -65,7 +65,7 @@ const Country = () => {
       const borders = data[0].borders?.map((cca3, index) => {
         const country = findByCCA3(cca3);
         return (
-          <Link key={index} to={`/country/${cca3}`} onClick={refetch()}>
+          <Link key={index} to={`/country/${cca3}`} onClick={refetch}>
             {country.name.common}
           </Link>
         );
@@ -75,9 +75,11 @@ const Country = () => {
   };
 
   useEffect(() => {
-    handleNativeName();
-    handleCurrency();
-    handleLanguage();
+    if (data) {
+      handleNativeName();
+      handleCurrency();
+      handleLanguage();
+    }
     getCachedData();
     handleBorderCountries();
     reload();
@@ -86,24 +88,24 @@ const Country = () => {
   return (
     <div className={"country-page " + theme}>
       {isLoading && <Loader />}
-      <div className={"country-wrapper " + theme}>
-        <button className={"back-btn " + theme} onClick={() => navigate(-1)}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-arrow-left"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-            />
-          </svg>
-          Back
-        </button>
-        {data && (
+      {!isLoading && data && (
+        <div className={"country-wrapper " + theme}>
+          <button className={"back-btn " + theme} onClick={() => navigate(-1)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-arrow-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+              />
+            </svg>
+            Back
+          </button>
           <div className="country-info-wrapper">
             <div className="image-container">
               <img src={data[0].flags.svg} alt={data[0].flags.alt} />
@@ -152,8 +154,8 @@ const Country = () => {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
